@@ -3,7 +3,7 @@ docker build -f Dockerfile.mysql -t mysql-local:1.0.0 .
 *This image in DockerHub: https://hub.docker.com/r/adryga/mysql-local
 
 Run mysql container:
-docker run -d --name mysql-local -p 3306:3306 mysql-local:1.0.0 -v /var/lib/mysql
+docker run -d -v mysql_data:/var/lib/mysql --name mysql-local -p 3306:3306 mysql-local:1.0.0
 
 Create app image:
 docker build -t app:2.0.0 .
